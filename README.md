@@ -30,6 +30,12 @@ Add the `-v` option when launching the container using the `docker run` command
 -v </local/workspace>:/home/rstudio
 ```
 
+### Stop a running container
+
+```
+sudo docker stop rstudio
+```
+
 ### Add you own packages
 
 Just add another line to the Dockerfile
