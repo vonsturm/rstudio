@@ -30,6 +30,16 @@ Open a web browser and go to `localhost:8787`
 sudo docker exec -it rstudio:<tag> /bin/bash
 ```
 
+### Add you own packages
+
+Just add another line to the Dockerfile
+
+```
+RUN install2.r <yourpackages>
+```
+rebuild the image and launch a new container. Be sure to stop
+any running rstudio container before launching another one.
+
 ### Additional documentation
 
 See also [rocker/rstudio](https://hub.docker.com/r/rocker/rstudio)
