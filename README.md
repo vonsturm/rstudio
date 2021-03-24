@@ -9,7 +9,7 @@ sudo docker build -t rstudio:<tag> .
 ### Run an rstudio container
 
 ```
-sudo docker run -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=true rstudio:<tag>
+sudo docker run -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=true --name rstudio rstudio:<tag>
 ```
 
 ### Connect to the running container
@@ -19,7 +19,7 @@ Open a web browser and go to `localhost:8787`
 ### Open a bash shell inside a running container
 
 ```
-sudo docker exec -it rstudio:<tag> /bin/bash
+sudo docker exec -it rstudio /bin/bash
 ```
 You can exit the shell with `CTRL+D`.
 
@@ -27,8 +27,7 @@ You can exit the shell with `CTRL+D`.
 
 Add the `-v` option when launching the container
 ```
--v </local/path>:</mountpoint/inside/container>
-```
+-v </local/workspace>:/home/rstudio```
 
 ### Add you own packages
 
