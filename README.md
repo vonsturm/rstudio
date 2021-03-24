@@ -25,7 +25,7 @@ You can exit the shell with `CTRL+D`.
 
 ### Mount volume
 
-Add the `-v` option when launching the container
+Add the `-v` option when launching the container using the `docker run` command
 ```
 -v </local/workspace>:/home/rstudio
 ```
