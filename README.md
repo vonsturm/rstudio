@@ -27,7 +27,8 @@ You can exit the shell with `CTRL+D`.
 
 Add the `-v` option when launching the container
 ```
--v </local/workspace>:/home/rstudio```
+-v </local/workspace>:/home/rstudio
+```
 
 ### Add you own packages
 
