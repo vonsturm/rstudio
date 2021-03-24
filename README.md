@@ -16,7 +16,7 @@ sudo docker run -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=tru
 
 Add the `-v` option when launching the container
 ```
--v /local/path:/mountpoint/inside/container
+-v </local/path>:</mountpoint/inside/container>
 ```
 
 ### Connect to the running container
