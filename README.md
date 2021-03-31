@@ -9,14 +9,14 @@ sudo docker build -t rstudio:<tag> .
 ### Run an rstudio container
 
 ```
-sudo docker run -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=true rstudio:<tag>
+sudo docker run --rm -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=true rstudio:<tag>
 ```
 
 ### Mount volume
 
 Add the `-v` option when launching the container
 ```
--v /local/path:/mountpoint/inside/container
+-v </local/path>:</mountpoint/inside/container>
 ```
 
 ### Connect to the running container
