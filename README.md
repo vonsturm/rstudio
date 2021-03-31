@@ -9,26 +9,42 @@ sudo docker build -t rstudio:<tag> .
 ### Run an rstudio container
 
 ```
-sudo docker run --rm -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=true rstudio:<tag>
-```
-
-### Mount volume
-
-Add the `-v` option when launching the container
-```
--v </local/path>:</mountpoint/inside/container>
+sudo docker run --rm -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=xyz -e DISABLE_AUTH=true --name rstudio rstudio:<tag>
 ```
 
 ### Connect to the running container
 
 Open a web browser and go to `localhost:8787`
 
-
 ### Open a bash shell inside a running container
 
 ```
-sudo docker exec -it rstudio:<tag> /bin/bash
+sudo docker exec -it rstudio /bin/bash
 ```
+You can exit the shell with `CTRL+D`.
+
+### Mount volume
+
+Add the `-v` option when launching the container using the `docker run` command
+```
+-v </local/workspace>:/home/rstudio
+```
+
+### Stop a running container
+
+```
+sudo docker stop rstudio
+```
+
+### Add you own packages
+
+Just add another line to the Dockerfile
+
+```
+RUN install2.r <yourpackages>
+```
+rebuild the image and launch a new container. Be sure to stop
+any running rstudio container before launching another one.
 
 ### Additional documentation
 
